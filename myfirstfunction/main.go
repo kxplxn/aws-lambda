@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -12,7 +13,7 @@ type Request events.APIGatewayProxyRequest
 type Response events.APIGatewayProxyResponse
 
 func Handler(event Request) (Response, error) {
-	fmt.Println(event)
+	log.Printf("EVENT OBJECT: %+v", event)
 
 	msg := "Hello from Lambda!"
 
